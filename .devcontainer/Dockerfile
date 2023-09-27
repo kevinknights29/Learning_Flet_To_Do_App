@@ -24,11 +24,11 @@ RUN apt-get update && \
 WORKDIR /opt/app
 
 # Copy files
-COPY create_env.sh \
-    requirements.in \
+COPY requirements.in \
     /opt/app/
 
 # Install dependencies
-RUN bash create_env.sh && \
+RUN python -m venv .venv && \
+    . .venv/bin/activate && \
     python -m pip install --upgrade pip && \
     python -m pip install --upgrade -r requirements.in
