@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 import os
+
 import flet
 
 
@@ -8,7 +11,7 @@ def main(page: flet.Page):
 
 if __name__ == "__main__":
     flet.app(
-        target=main, 
+        target=main,
         port=os.getenv("PORT", "7860"),
-        view=flet.AppView.WEB_BROWSER
+        view=flet.AppView.WEB_BROWSER,
     )

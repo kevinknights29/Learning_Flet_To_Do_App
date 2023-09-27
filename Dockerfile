@@ -18,7 +18,7 @@ RUN apt-get update && \
     libffi-dev \
     libsqlite3-dev \
     libbz2-dev
-    
+
 
 # Set working directory
 WORKDIR /opt/app
