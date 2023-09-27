@@ -30,7 +30,7 @@ COPY requirements.in \
 
 # Install dependencies
 RUN python -m pip install --upgrade pip && \
-    python -m pip install --upgrade requirements.in
+    python -m pip install --upgrade -r requirements.in
 
 # Expose port
 EXPOSE 7860
