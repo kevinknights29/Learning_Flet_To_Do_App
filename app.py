@@ -11,15 +11,27 @@ def main(page: flet.Page):
         new_task.value = ""
         page.update()
 
-    new_task = flet.TextField(value="What needs to be done?")
+    new_task = flet.TextField(value="What needs to be done?", expand=True)
 
-    page.add(
-        new_task,
-        flet.FloatingActionButton(
-            icon=flet.icons.ADD,
-            on_click=add_clicked,
-        ),
+    tasks_view = flet.Column()
+    view = flet.Column(
+        width=600,
+        controls=[
+            flet.Row(
+                controls=[
+                    new_task,
+                    flet.FloatingActionButton(
+                        icon=flet.icons.ADD,
+                        on_click=add_clicked,
+                    ),
+                ],
+            ),
+            tasks_view,
+        ],
     )
+
+    page.horizontal_alignment = flet.CrossAxisAlignment.CENTER
+    page.add(view)
 
 
 if __name__ == "__main__":
