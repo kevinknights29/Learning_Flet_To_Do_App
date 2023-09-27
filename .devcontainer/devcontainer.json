@@ -28,5 +28,5 @@
             ]
         }
     },
-    "runArgs": ["--env-file"]
+    "runArgs": ["--env-file", ".devcontainer/devcontainer.env"]
 }
